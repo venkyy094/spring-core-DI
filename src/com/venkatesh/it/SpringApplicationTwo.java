@@ -1,0 +1,39 @@
+package com.venkatesh.it;
+
+import java.util.List;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.FileSystemXmlApplicationContext;
+
+public class SpringApplicationTwo {
+
+	public static void main(String[] args) {
+		ApplicationContext container = new FileSystemXmlApplicationContext("C:\\Users\\venky\\Downloads\\java latest\\eclipse\\eclipse files\\spring-beans-DI\\venkateshit.XML");
+		
+		
+		ProductInformation p1 = (ProductInformation) container.getBean("product1");
+		System.out.println(p1);
+		
+		ProductInformation p2 = (ProductInformation) container.getBean("product2");
+		System.out.println(p2);
+		
+		
+		OrderInformation o1 = (OrderInformation) container.getBean("order1");
+		System.out.println(o1.getOrderId());
+		List<String> productNames =  o1.getProductNames();
+		
+		productNames.forEach(System.out::println);
+		
+		System.out.println(o1.getReleaseYears());
+		
+		OrderInformation o2 = (OrderInformation) container.getBean("order2");
+		
+		System.out.println(o2.getOrderId());
+		System.out.println(o2.getProductNames());
+		System.out.println(o2.getReleaseYears());
+		System.out.println(o2.getEmailIds());
+		System.out.println(o2.getProductsAndPrices());	
+	
+	}
+
+}

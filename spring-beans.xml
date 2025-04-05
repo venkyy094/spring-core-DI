@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+  <bean id="office" class = "com.venkatesh.it.setter.injection.Address">
+  <property name="pincode" value="500072"></property>
+  <property name="city"  value="HYDERABAD"></property>
+  <property name="country"  value="India"></property>    
+  </bean>
+  
+  <bean id ="emp1" class = "com.venkatesh.it.setter.injection.Employee">
+  <property name="name"  value="Dilip"></property>
+  <property name="id"  value="100"></property>
+  <property name="salary" value ="100000.00"></property>
+  <property name="address" ref="office"></property>  
+  <property name="presentAddress" ref ="presentAdd"></property>
+  </bean>
+  
+  <bean id = "presentAdd" class = "com.venkatesh.it.setter.injection.PresentAddress">
+  
+  <property name="pincode" value="500090"></property>
+  <property name="area" value="Delhi"></property>
+  
+  </bean>
+  
+
+
+
+
+</beans>
